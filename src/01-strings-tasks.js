@@ -17,8 +17,8 @@
  *   'aa',''    => 'aa'
  *   '',  'bb'  => 'bb'
  */
-function concatenateStrings(/* value1, value2 */) {
-  return arguments[0] + arguments[1];
+function concatenateStrings(value1, value2) {
+  return value1 + value2;
 }
 
 /**
@@ -32,8 +32,8 @@ function concatenateStrings(/* value1, value2 */) {
  *   'b'     => 1
  *   ''      => 0
  */
-function getStringLength(/* value */) {
-  return arguments[0].length;
+function getStringLength(value) {
+  return value.length;
 }
 
 /**
