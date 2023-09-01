@@ -49,9 +49,8 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(value1, value2) {
-  const average = (value1 + value2) / 2;
-  return average;
+function getAverage(/* value1, value2 */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -178,8 +177,8 @@ function getParallelepipedDiagonal(/* a, b, c */) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(num, pow) {
-  return;
+function roundToPowerOfTen(/* num, pow */) {
+  throw new Error('Not implemented');
 }
 
 /**
@@ -199,11 +198,8 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(n) {
-  const numbers = [2, 3, 4, 5, 6, 7, 8, 9];
-  for (let i = 1; i <= numbers[length]; i++) {
-    (n / i) % numbers[i] === 0 ? true : false;
-  }
+function isPrime(/* n */) {
+  throw new Error('Not implemented');
 }
 /**
  * Tries to convert value to number and returns it if conversion was successful;
