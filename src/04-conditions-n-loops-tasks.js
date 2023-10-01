@@ -200,9 +200,10 @@ function findFirstSingleChar(/* str */) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-  throw new Error('Not implemented');
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
+  return a < b ? `${isStartIncluded ? '[' : '('}${a}, ${b}${isEndIncluded ? ']' : ')'}` : `${isStartIncluded ? '[' : '('}${b}, ${a}${isEndIncluded ? ']' : ')'}`;
 }
+
 
 /**
  * Reverse the specified string (put all chars in reverse order)
@@ -283,9 +284,23 @@ function isCreditCardNumber(/* ccn */) {
  *   10000 ( 1+0+0+0+0 = 1 ) => 1
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
-function getDigitalRoot(/* num */) {
-  throw new Error('Not implemented');
+function getDigitalRoot(num) {
+  const num1 = num.toString();
+  let sum = 0;
+  for (let i = 0; i < num1.length; i += 1) {
+    sum += +num1[i];
+  }
+  if (sum > 9) {
+    let sum2 = 0;
+    sum = sum.toString();
+    for (let j = 0; j < sum.length; j += 1) {
+      sum2 += +sum[j];
+    }
+    return sum2;
+  }
+  return sum;
 }
+
 
 /**
  * Returns true if the specified string has the balanced brackets and false otherwise.
