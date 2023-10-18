@@ -532,9 +532,23 @@ function distinct(arr) {
  *    "Poland" => ["Lodz"]
  *   }
  */
-function group(/* array, keySelector, valueSelector */) {
-  throw new Error('Not implemented');
+function group(array, keySelector, valueSelector) {
+  const setOfCountries = new Map();
+
+  array.map((obj) => {
+    const cities = setOfCountries.get(keySelector(obj));
+    if (cities) {
+      cities.push(valueSelector(obj));
+      setOfCountries.set(keySelector(obj), cities);
+    } else {
+      setOfCountries.set(keySelector(obj), [valueSelector(obj)]);
+    }
+    return obj;
+  });
+
+  return setOfCountries;
 }
+
 
 /**
  * Projects each element of the specified array to a sequence
